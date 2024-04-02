@@ -1,99 +1,80 @@
+* {
+  font-family: Charter, "Bitstream Charter", "Sitka Text", Cambria, serif;
+}
+
+body {
+  margin: 10px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
 .container {
-    max-width: 70vh;
-    margin: 1 auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
+  display: flex;
+  flex-wrap: wrap;
+}
 
-  .block1 {
-    flex:1;
-    background-color: #f2f2f2;
-    padding: 50px;
-    margin-bottom: 0px;
-    box-sizing: border-box;
-    border: 2px solid #a03c3c;
-  }
-  .block2 {
-    flex:1;
-    background-color: #f2f2f2;
-    padding: 50px;
-    margin-bottom: 0px;
-    box-sizing: border-box;
-    border: 2px solid #a03c3c;
-  }
+.card {
+  display: flex;
+  gap: 32px;
+  width: 50%;
+  padding: 27px;
+  padding-left: 32px;
+  min-height: calc(50vh - 34.75px);
+  border: 2px solid red;
+}
 
-  .block3 {
-    flex: 1;
-    background-color: #f2f2f2;
-    padding: 50px;
-    margin-bottom: 0px;
-    box-sizing: border-box;
-    border: 2px solid #a03c3c;
-  }
-  .block4 {
-    flex: 1;
-    background-color: #f2f2f2;
-    padding: 50px;
-    margin-bottom: 0px;
-    box-sizing: border-box;
-    border: 2px solid #a03c3c;
-  }
-  
+.card:nth-child(1),
+.card:nth-child(3) {
+  border-right: 1px solid red;
+}
 
-  .block1 h2 span {
-    color: rgb(132, 59, 59);
-    content: attr(data-number);
-    display: inline-block;
-    width: 1em; /* Ширина псевдоелементу */
-    height: 1em; /* Висота псевдоелементу */
-    border: 2px solid rgb(132, 59, 59); /* Товщина та колір межі */
-    border-radius: 50%; /* Радіус для зроблення кола */
-    text-align: center; /* Центрування тексту */
-    line-height: 1em; /* Збігається з висотою, щоб текст був по центру */
-    margin-right: 0.1em; /* Зазор між кругом і текстом */
-  }
+.card:nth-child(2),
+.card:nth-child(4) {
+  border-left: 1px solid red;
+}
 
-  .block2 h2 span {
-    color: rgb(132, 59, 59);
-    content: attr(data-number);
-    display: inline-block;
-    width: 1em; /* Ширина псевдоелементу */
-    height: 1em; /* Висота псевдоелементу */
-    border: 2px solid rgb(132, 59, 59); /* Товщина та колір межі */
-    border-radius: 50%; /* Радіус для зроблення кола */
-    text-align: center; /* Центрування тексту */
-    line-height: 1em; /* Збігається з висотою, щоб текст був по центру */
-    margin-right: 0.1em; /* Зазор між кругом і текстом */
-  }
-  .block3 h2 span {
-    color: rgb(132, 59, 59);
-    content: attr(data-number);
-    display: inline-block;
-    width: 1em; /* Ширина псевдоелементу */
-    height: 1em; /* Висота псевдоелементу */
-    border: 2px solid rgb(132, 59, 59); /* Товщина та колір межі */
-    border-radius: 50%; /* Радіус для зроблення кола */
-    text-align: center; /* Центрування тексту */
-    line-height: 1em; /* Збігається з висотою, щоб текст був по центру */
-    margin-right: 0.1em; /* Зазор між кругом і текстом */
-  }
-  .block4 h2 span {
-    color: rgb(132, 59, 59);
-    content: attr(data-number);
-    display: inline-block;
-    width: 1em; /* Ширина псевдоелементу */
-    height: 1em; /* Висота псевдоелементу */
-    border: 2px solid rgb(132, 59, 59); /* Товщина та колір межі */
-    border-radius: 50%; /* Радіус для зроблення кола */
-    text-align: center; /* Центрування тексту */
-    line-height: 1em; /* Збігається з висотою, щоб текст був по центру */
-    margin-right: 0.1em; /* Зазор між кругом і текстом */
-  }
+.card:nth-child(1),
+.card:nth-child(2) {
+  border-bottom: 1px solid red;
+}
 
-  .container .block1 ul li:nth-child(even),
-  .container .block2 ul li:nth-child(even),
-  .container .block3 ul li:nth-child(even),
-  .container .block4 ul li:nth-child(even) {
-    color: red;
-  }
+.card:nth-child(3),
+.card:nth-child(4) {
+  border-top: 1px solid red;
+}
+
+.card__number {
+  position: relative;
+  font-size: 24px;
+}
+
+.card__number::before {
+  border-radius: 100%;
+  border: 2px solid red;
+  position: absolute;
+  content: "";
+  width: 40px;
+  height: 40px;
+  top: -5px;
+  left: -13.025px;
+  z-index: -1;
+}
+
+.card__title {
+  margin-bottom: 12px;
+}
+
+.card-list__item:not(:last-child) {
+  margin-bottom: 6px;
+}
+
+.card-list__item:nth-child(2n) {
+  color: red;
+}
+
+.card-list__item::marker {
+  content: "- ";
+}
